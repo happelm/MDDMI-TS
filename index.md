@@ -53,6 +53,10 @@ X is your participant number from the trainer.
 
 Passwords are handed out by the trainer.
 
+### Naming
+
+You share the tenant with the other participants. Start the name of every policy, profile, app and script you create with your prefix `etcX-` (for example `etc3-Web sign-in`), so every object is unique and you find your own.
+
 ### Tools
 
 - CMTrace for all .log files – Intune Management Extension logs in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`
