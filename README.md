@@ -20,6 +20,10 @@ Lab instructions for the MDDMI-TS troubleshooting workshop.
 
 [Log map](Instructions/Appendix.md)
 
+### Resources
+
+[MDDMI-TS link collection](https://github.com/happelm/Intune-Resources/blob/main/Intune3Links.md) – Learn articles, blogs and tools for this workshop.
+
 ## About this guide
 
 Each lab lists its goal, the steps at task level (not every click) and a checkpoint you confirm before moving on.
