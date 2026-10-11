@@ -18,7 +18,7 @@ lab:
    dsregcmd /status
    ```
 
-3. CL4: open the Labfiles share on DC1 in `smart.etc` (\\dc1.smart.etc\labfiles).
+3. CL4: open the Labfiles share on DC1 in `smart.etc`: `\\dc1.smart.etc\labfiles`.
 4. CL4: list your Kerberos tickets.
 
    ```cmd
@@ -30,7 +30,7 @@ lab:
 ### Checkpoint
 
 - [ ] `dsregcmd /status`, section SSO State: `AzureAdPrt`, `CloudTgt` and `OnPremTgt` are `YES`
-- [ ] SRV1 share opens without a password prompt, `klist` shows a ticket for SRV1
+- [ ] DC1 share opens without a password prompt, `klist` shows a ticket for DC1
 - [ ] Azure file share opens without a password prompt
 
 **Note:** Microsoft Entra Kerberos and Windows Hello for Business are already enabled in the training tenant. `CloudTgt` is the cloud Kerberos ticket for cloud resources, `OnPremTgt` the one for on-premises resources.
