@@ -18,7 +18,7 @@ lab:
    dsregcmd /status
    ```
 
-3. CL4: open a share on SRV1 in `smart.etc` (path from the trainer).
+3. CL4: open the Labfiles share on DC1 in `smart.etc` (\\dc1.smart.etc\labfiles).
 4. CL4: list your Kerberos tickets.
 
    ```cmd
