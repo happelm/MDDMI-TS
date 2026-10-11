@@ -13,7 +13,7 @@ lab:
 
 1. CL3: run `dsregcmd /status` and check `AzureAdJoined` and `AzureAdPrt`.
 2. CL3: Settings → Accounts → Access work or school → your account → **Info**. Note the management server and the last sync.
-3. CL3, elevated: open `regedit` and go to `HKLM\SOFTWARE\Microsoft\Enrollments`. Find the GUID key that holds your UPN (`etcX@…`).
+3. CL3, elevated: open `regedit` and go to `HKLM\SOFTWARE\Microsoft\Enrollments`. Find the GUID key of the Intune enrollment – its `ProviderID` is `MS DM Server`.
 4. CL3, elevated: Task Scheduler → Microsoft → Windows → EnterpriseMgmt – find the same GUID.
 
 ### Checkpoint
@@ -21,7 +21,7 @@ lab:
 - [ ] `AzureAdJoined : YES` and `AzureAdPrt : YES`
 - [ ] Same GUID in the registry and in Task Scheduler
 
-**Note:** Task Scheduler shows the EnterpriseMgmt tasks only to administrators. `HKLM\SOFTWARE\Microsoft\Enrollments` can hold more than one GUID – only one of them carries your UPN.
+**Note:** Task Scheduler shows the EnterpriseMgmt tasks only to administrators. The GUID is different on every client. `HKLM\SOFTWARE\Microsoft\Enrollments` can hold more than one GUID – only one of them is the Intune enrollment.
 
 **Why:** The enrollment GUID is the key for everything that follows: Intune policies are stored per provider GUID (Lab 4.1).
 

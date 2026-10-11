@@ -19,7 +19,13 @@ lab:
    mdmdiagnosticstool.exe -area "DeviceEnrollment;DeviceProvisioning;Autopilot" -zip "C:\Users\Public\Documents\MDMDiagReport.zip"
    ```
 
-4. CL3: open `IntuneManagementExtension.log` from `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs` with CMTrace (`cmtrace.exe` in the [Labfiles](https://github.com/happelm/MDDMI-TS/tree/main/Labfiles)).
+4. CL3: connect the lab share and copy `cmtrace.exe` to the desktop. Entra-joined clients have no mapped network drives – connect the share first.
+
+   ```cmd
+   net use \\dc1\labfiles
+   ```
+
+   Then open `IntuneManagementExtension.log` from `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs` with CMTrace.
 5. Intune admin center → Devices → All devices → `CL3-yourname` → Monitor → Device diagnostics: download the package from step 1 and find the same information in it.
 
 ### Checkpoint

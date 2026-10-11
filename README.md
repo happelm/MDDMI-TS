@@ -26,7 +26,7 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 | 5.1 | [Trace a Win32 app](Instructions/Labs/LAB_05_1_trace-a-win32-app.md) | 45 min |
 | 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.md) | 30 min |
 | 7.1 | [Trace a compliance block](Instructions/Labs/LAB_07_1_trace-a-compliance-block.md) | 30 min |
-| 8.1 | [Web sign-in and cloud Kerberos](Instructions/Labs/LAB_08_1_web-sign-in-and-cloud-kerberos.md) | 45 min |
+| 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.md) | 45 min |
 | 10.1 | [Spot the difference](Instructions/Labs/LAB_10_1_spot-the-difference.md) | 30 min |
 
 ### Appendix
@@ -61,7 +61,7 @@ X is your participant number from `course.txt`. Passwords are handed out by the 
 
 ### Naming
 
-Every policy, profile, app and script you create starts with `etcX-` (for example `etc3-WebSignIn`), so every object is unique and you find your own.
+Every policy, profile, app and script you create starts with `etcX-` (for example `etc3-CMTrace`), so every object is unique and you find your own.
 
 ### Your permissions
 
@@ -78,7 +78,7 @@ Not for you: roles, scope tags, tenant settings, Conditional Access. Assignment 
 
 ### Tools
 
-- CMTrace for all .log files – Intune Management Extension logs in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`
+- CMTrace for all .log files – from `\\dc1\labfiles` in Lab 2.1, deployed by Intune in Lab 5.1. Intune Management Extension logs in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`
 - Intune admin center: intune.microsoft.com · Entra admin center: entra.microsoft.com
 - Lab files: [Labfiles folder in this repository](https://github.com/happelm/MDDMI-TS/tree/main/Labfiles)
 
