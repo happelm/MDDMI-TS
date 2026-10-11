@@ -1,24 +1,37 @@
 # MDDMI-TS – Troubleshooting Microsoft Intune
 
-Lab instructions for the MDDMI-TS troubleshooting workshop.
+Lab instructions for the two-day MDDMI-TS troubleshooting workshop.
 
 - **Read online:** <https://happelm.github.io/MDDMI-TS/>
 
 ## Labs
 
+### Day 1 – Method, enroll, configure
+
+Troubleshooting method and service-side tools, log files, registration and enrollment, RBAC, policy processing and conflicts.
+
 | Lab | Title | Time |
 |---|---|---|
-| 0.1 | [Set up your lab](Instructions/Labs/LAB_00_1_set-up-your-lab.md) | TBD |
-| 2.1 | [Collect and read Intune logs](Instructions/Labs/LAB_02_1_collect-and-read-intune-logs.md) | TBD |
-| 3.1 | [Check the enrollment state](Instructions/Labs/LAB_03_1_check-the-enrollment-state.md) | TBD |
-| 4.1 | [Trace a policy to the registry](Instructions/Labs/LAB_04_1_trace-a-policy-to-the-registry.md) | TBD |
-| 5.1 | [Trace a Win32 app](Instructions/Labs/LAB_05_1_trace-a-win32-app.md) | TBD |
-| 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.md) | TBD |
-| 8.1 | [Web sign-in and cloud Kerberos](Instructions/Labs/LAB_08_1_web-sign-in-and-cloud-kerberos.md) | TBD |
+| 0.1 | [Set up your lab](Instructions/Labs/LAB_00_1_set-up-your-lab.md) | 20 min |
+| 2.1 | [Collect and read Intune logs](Instructions/Labs/LAB_02_1_collect-and-read-intune-logs.md) | 30 min |
+| 3.1 | [Check the enrollment state](Instructions/Labs/LAB_03_1_check-the-enrollment-state.md) | 25 min |
+| 4.1 | [Trace a policy to the registry](Instructions/Labs/LAB_04_1_trace-a-policy-to-the-registry.md) | 30 min |
+
+### Day 2 – Apps, protect, support
+
+App deployment and the Intune Management Extension, scripts and remediations, compliance and Conditional Access, SSO and Microsoft Entra Kerberos, legacy management conflicts (demo), support, retire and community tools.
+
+| Lab | Title | Time |
+|---|---|---|
+| 5.1 | [Trace a Win32 app](Instructions/Labs/LAB_05_1_trace-a-win32-app.md) | 45 min |
+| 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.md) | 30 min |
+| 7.1 | [Trace a compliance block](Instructions/Labs/LAB_07_1_trace-a-compliance-block.md) | 30 min |
+| 8.1 | [Web sign-in and cloud Kerberos](Instructions/Labs/LAB_08_1_web-sign-in-and-cloud-kerberos.md) | 45 min |
+| 10.1 | [Spot the difference](Instructions/Labs/LAB_10_1_spot-the-difference.md) | 30 min |
 
 ### Appendix
 
-[Log map](Instructions/Appendix.md)
+[Log map, collecting logs](Instructions/Appendix.md)
 
 ### Resources
 
@@ -26,42 +39,48 @@ Lab instructions for the MDDMI-TS troubleshooting workshop.
 
 ## About this guide
 
-Each lab lists its goal, the steps at task level (not every click) and a checkpoint you confirm before moving on.
+This is not a break-and-fix course. You first look at how a healthy device behaves and logs – a deviation then shows you where to look. Each lab lists its goal, the steps at task level (not every click) and a checkpoint you confirm before moving on.
 
 - **Steps** say what to do and where. Menu paths use → between levels.
-- **Checkpoint** items are the definition of done. If one fails, tell the trainer before you continue.
-- **Troubleshooting scenarios** start with a symptom. Use the hints in order and open the solution only after you have a root cause and evidence.
+- **Checkpoint** items are the definition of done. If one fails, tell the trainer before you continue – later labs build on your enrolled CL3 and CL4.
+- **Notes** explain what to expect and where it typically goes wrong.
 
 ### Your lab environment
 
-You work with two Windows 11 clients and one account in the trainer's training tenant. Your clients join Microsoft Entra ID natively and enroll in Intune – no domain join, no Configuration Manager.
+One shared training tenant – your objects carry your number, nobody touches another participant's objects. Your clients join Microsoft Entra ID natively and enroll in Intune – no domain join, no Configuration Manager.
 
-| System | Role | Your part |
+| System | Role | Note |
 |---|---|---|
-| CL3, CL4 | Windows 11, your lab clients | Rename to `CL3-yourname` and `CL4-yourname`, join to Entra ID, enroll in Intune |
-| DC1, SRV1 | On-premises domain `smart.etc` in the classroom network | Provided by the trainer – target for resource access with Microsoft Entra Kerberos |
-| Tenant | Trainer's training tenant | Sign in with your account `etcX` |
+| Tenant | Shared training tenant of the trainer | You are user `etcX`; your groups are `studentXdevices` and `studentXusers` |
+| CL3, CL4 | Windows 11 – your clients | Start at OOBE; renamed to `CL3-yourname` / `CL4-yourname`, Entra joined and enrolled by you in Lab 0.1 |
+| DC1 | AD DS, DNS – domain `smart.etc` (trainer's pod) | On-premises resources for Microsoft Entra Kerberos (Lab 8.1) |
+| SRV1 | Member server in `smart.etc` (trainer's pod) | On-premises resources for the SSO tests |
+| Classroom LAN | DHCP (trainer's pod) | Connects your clients to `smart.etc` |
 
-X is your participant number from the trainer.
-
-### Accounts and groups
-
-| Name | Type | Used for |
-|---|---|---|
-| `etcX` | User account in the training tenant | Your sign-in on CL3/CL4 and in the admin centers |
-| `studentXdevices` | Existing Entra group | Your devices – add CL3 and CL4 |
-| `studentXusers` | Existing Entra group | Your user |
-
-Passwords are handed out by the trainer.
+X is your participant number from `course.txt`. Passwords are handed out by the trainer.
 
 ### Naming
 
-You share the tenant with the other participants. Start the name of every policy, profile, app and script you create with your prefix `etcX-` (for example `etc3-Web sign-in`), so every object is unique and you find your own.
+Every policy, profile, app and script you create starts with `etcX-` (for example `etc3-WebSignIn`), so every object is unique and you find your own.
+
+### Your permissions
+
+All roles are assigned to your group `studentXusers`, never to you directly.
+
+| Where | Role | You can |
+|---|---|---|
+| Entra ID | User Administrator, Authentication Administrator – admin unit *Lab-Student Group Administrators* | Manage the student device groups, e.g. add CL3 and CL4 to `studentXdevices` |
+| Entra ID | Cloud Device Administrator – admin unit *Lab-Student Device Administrators* | Enable, disable and delete lab devices |
+| Intune | Lab-Reader for Students | See everything, change nothing |
+| Intune | Lab-Administrator for Students | Create, change, assign and delete objects tagged *Lab-Students*, assign to the student groups only |
+
+Not for you: roles, scope tags, tenant settings, Conditional Access. Assignment filters are read only. Your roles reach the lab groups and lab devices of every participant – touch only your own.
 
 ### Tools
 
 - CMTrace for all .log files – Intune Management Extension logs in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`
 - Intune admin center: intune.microsoft.com · Entra admin center: entra.microsoft.com
+- Lab files: [Labfiles folder in this repository](https://github.com/happelm/MDDMI-TS/tree/main/Labfiles)
 
 ## Known issues and feedback
 

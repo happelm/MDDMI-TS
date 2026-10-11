@@ -2,26 +2,32 @@
 title: 'Lab 2.1 – Collect and read Intune logs'
 lab:
     title: 'Lab 2.1 – Collect and read Intune logs'
-    module: 'Log files'
+    module: 'Day 1 – Method, enroll, configure'
 ---
 
 # Lab 2.1 – Collect and read Intune logs
 
-**Estimated time:** TBD
+**Estimated time:** 30 minutes
 
-> **Draft:** This lab is a placeholder and not ready for use yet.
+**Goal:** Build a known-good baseline of your own CL3 – the reference for every later module.
 
-**Goal:** TBD
+1. Intune admin center → Devices → All devices → `CL3-yourname` → **Collect diagnostics**. Then sync CL3. The package arrives in about 15 minutes – continue with the next steps meanwhile.
+2. CL3: Settings → Accounts → Access work or school → **Export your management log files**. Open the report from `C:\Users\Public\Documents\MDMDiagnostics`.
+3. CL4, elevated command prompt: create the diagnostics package from the command line and compare it with the report from step 2.
 
-<!-- Outline from slide 23 (Workshop - Intune TS.pptx):
-- Create and study the MDM diagnostic report from the Settings app
-- Collect diagnostics from the Intune admin center and study the content (takes some minutes)
-- Create logs with MdmDiagnosticsTool.exe
-- First look into the IME log files with CMTrace
--->
+   ```cmd
+   mdmdiagnosticstool.exe -area "DeviceEnrollment;DeviceProvisioning;Autopilot" -zip "C:\Users\Public\Documents\MDMDiagReport.zip"
+   ```
 
-1. TBD
+4. CL3: open `IntuneManagementExtension.log` from `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs` with CMTrace (`cmtrace.exe` in the [Labfiles](https://github.com/happelm/MDDMI-TS/tree/main/Labfiles)).
+5. Intune admin center → Devices → All devices → `CL3-yourname` → Monitor → Device diagnostics: download the package from step 1 and find the same information in it.
 
 ### Checkpoint
 
-- [ ] TBD
+- [ ] MDM report shows your enrollment and the managed policies
+- [ ] Diagnostics package downloaded and opened
+- [ ] You can name the log for each of the five layers (see the [log map](../Appendix.html#log-map))
+
+**Note:** The zip from `mdmdiagnosticstool.exe` contains `MDMDiagHtmlReport.html`, `MDMDiagReport.xml`, a registry dump and the DeviceManagement-Enterprise-Diagnostics-Provider Admin event log. The list of available areas is in `HKLM\SOFTWARE\Microsoft\MdmDiagnostics\Area`.
+
+**Why:** This course does not break devices on purpose. You learn what a healthy CL3 logs, so that a deviation stands out later. Keep this baseline – Module 3 compares against it.
