@@ -30,7 +30,7 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 | 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.html) | 30 min |
 | 7.1 | [Trace a compliance block](Instructions/Labs/LAB_07_1_trace-a-compliance-block.html) | 30 min |
 | 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.html) | 45 min |
-| 10.1 | [Spot the difference](Instructions/Labs/LAB_10_1_spot-the-difference.html) | 30 min |
+| 10.1 | [Partner breaks, you fix](Instructions/Labs/LAB_10_1_partner-breaks-you-fix.html) (draft) | 30 min |
 
 ### Appendix
 
