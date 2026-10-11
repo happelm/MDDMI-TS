@@ -9,8 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-> **New:** The log sets for this lab are not in the Labfiles yet. The trainer provides them in class.
-
 **Goal:** Compare a known-good and a broken log set and name the layer and the cause.
 
 1. Open the known-good and the broken log set in CMTrace.
