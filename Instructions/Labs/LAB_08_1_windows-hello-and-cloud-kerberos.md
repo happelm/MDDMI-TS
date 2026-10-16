@@ -7,7 +7,7 @@ lab:
 
 # Lab 8.1 – Windows Hello and cloud Kerberos
 
-**Estimated time:** 45 minutes
+**Estimated time:** 10 minutes
 
 **Goal:** Sign in with Windows Hello and reach on-premises resources – and optionally Azure Files – without a password prompt.
 
