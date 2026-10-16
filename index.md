@@ -27,10 +27,12 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 | Lab | Title | Time |
 |---|---|---|
 | 5.1 | [Trace a Win32 app](Instructions/Labs/LAB_05_1_trace-a-win32-app.html) | 45 min |
-| 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.html) | 30 min |
+| 5.2 | [Force the reinstall of a required app](Instructions/Labs/LAB_05_2_force-the-reinstall-of-a-required-app.html) | 25 min |
+| 6.1 | [Trace a platform script and a remediation](Instructions/Labs/LAB_06_1_trace-a-platform-script-and-a-remediation.html) | 40 min |
 | 7.1 | [Trace a compliance block](Instructions/Labs/LAB_07_1_trace-a-compliance-block.html) | 30 min |
 | 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.html) | 45 min |
-| 10.1 | [Partner breaks, you fix](Instructions/Labs/LAB_10_1_partner-breaks-you-fix.html) (draft) | 30 min |
+| 10.1 | [Troubleshoot with Microsoft Graph](Instructions/Labs/LAB_10_1_troubleshoot-with-microsoft-graph.html) | 30 min |
+| 10.2 | [Partner breaks, you fix](Instructions/Labs/LAB_10_2_partner-breaks-you-fix.html) (draft, if time permits) | 30 min |
 
 ### Appendix
 

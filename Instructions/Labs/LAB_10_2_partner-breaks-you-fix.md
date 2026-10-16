@@ -1,13 +1,13 @@
 ---
-title: 'Lab 10.1 – Partner breaks, you fix'
+title: 'Lab 10.2 – Partner breaks, you fix'
 lab:
-    title: 'Lab 10.1 – Partner breaks, you fix'
+    title: 'Lab 10.2 – Partner breaks, you fix'
     module: 'Day 2 – Apps, protect, support'
 ---
 
-# Lab 10.1 – Partner breaks, you fix
+# Lab 10.2 – Partner breaks, you fix
 
-**Estimated time:** 30 minutes
+**Estimated time:** 30 minutes – if time permits
 
 > **Draft:** This lab is new and its scenarios are still being tested. If a step behaves differently, tell the trainer.
 
