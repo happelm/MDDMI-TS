@@ -38,6 +38,12 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 
 [Log map, collecting logs](Instructions/Appendix.html)
 
+### Trainer notes
+
+[Hybrid join and Microsoft Entra Kerberos](Instructions/Trainer/hybrid-join-entra-kerberos.html) – setup checklist for the CL1/CL2 demo in the trainer pod
+
+[Azure Files share and Microsoft Entra Kerberos](Instructions/Trainer/azure-files-entra-kerberos.html) – optional lab files share on Azure Files
+
 ### Resources
 
 [MDDMI-TS link collection](https://github.com/happelm/Intune-Resources/blob/main/Intune3Links.md) – Learn articles, blogs and tools for this workshop.
