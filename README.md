@@ -39,7 +39,7 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 
 [Hybrid join and Microsoft Entra Kerberos](Instructions/Trainer/hybrid-join-entra-kerberos.md) – setup checklist for the CL1/CL2 demo in the trainer pod
 
-[Azure Files share and Microsoft Entra Kerberos](Instructions/Trainer/azure-files-entra-kerberos.md) – optional lab files share on Azure Files
+[Azure Files share and Microsoft Entra Kerberos](Instructions/Trainer/azure-files-entra-kerberos.md) – setup checklist for the SSO demo with the Azure Files lab share
 
 ### Resources
 

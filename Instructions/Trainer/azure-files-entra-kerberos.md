@@ -1,6 +1,6 @@
 # Trainer notes – Azure Files share and Microsoft Entra Kerberos
 
-Optional: a lab files share on Azure Files, `\\<storage account>.file.core.windows.net\labfiles`, as an alternative to `\\dc1\labfiles` – for example when CL3/CL4 have no line of sight to DC1. Participants sign in with their synced `etcX` accounts and reach the share with a Kerberos ticket from Microsoft Entra ID.
+Trainer demo: the lab files share `\\mddmi.file.core.windows.net\labfiles` on Azure Files shows SSO with Microsoft Entra Kerberos from CL3/CL4. Participants sign in with their synced `etcX` accounts and reach the share with a Kerberos ticket from Microsoft Entra ID, without line of sight to DC1. The labs themselves use `\\dc1\labfiles`.
 
 **Before each course: nothing to do.** The share and its configuration stay in place between courses. Use this page only after a rebuild or when the share stops working.
 
@@ -28,7 +28,7 @@ In the Azure portal, open the storage account and go to **File shares** > **Iden
 ### 3. Storage account app – admin consent
 
 1. Go to Entra admin center > **App registrations** > **All applications**.
-2. Open **[Storage Account] <storage account>.file.core.windows.net** > **API permissions**.
+2. Open **[Storage Account] mddmi.file.core.windows.net** > **API permissions**.
 3. Select **Grant admin consent** for openid, profile and User.Read.
 
 ### 4. Storage account app – cloud group SIDs
@@ -45,11 +45,11 @@ If `tags` already holds values, keep them and add the tag to the list. Without t
 
 ### 5. Conditional Access – exclude the storage app from MFA
 
-Exclude **[Storage Account] <storage account>.file.core.windows.net** from every Conditional Access policy that requires MFA. The ticket is requested silently during sign-in, without a prompt. See [Disable multifactor authentication on the storage account](https://learn.microsoft.com/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable#disable-multifactor-authentication-on-the-storage-account).
+Exclude **[Storage Account] mddmi.file.core.windows.net** from every Conditional Access policy that requires MFA. The ticket is requested silently during sign-in, without a prompt. See [Disable multifactor authentication on the storage account](https://learn.microsoft.com/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable#disable-multifactor-authentication-on-the-storage-account).
 
 ### 6. Permissions
 
-- **Share level (Azure RBAC):** **Storage File Data SMB Share Reader** on the share, assigned to a group that contains all `studentXusers` groups (nested groups work once the tag from step 4 is set).
+- **Share level (Azure RBAC):** **Storage File Data SMB Share Reader** on the share, assigned to the participant group **All StudentUsr Groups**.
 - **Directory and file level (NTFS):** **Read & execute** on the share root for the same group. For hybrid identities, set NTFS permissions from a machine with line of sight to DC1, for example CL1 in the trainer pod.
 
 ### 7. Clients CL3/CL4
@@ -62,8 +62,8 @@ On CL3, signed in as a `etcX` user:
 
 ```console
 klist cloud_debug
-klist get cifs/<storage account>.file.core.windows.net
-net use \\<storage account>.file.core.windows.net\labfiles
+klist get cifs/mddmi.file.core.windows.net
+net use \\mddmi.file.core.windows.net\labfiles
 ```
 
 `klist cloud_debug` must show a cloud TGT. After any change to the app, the tag, the groups or the policy, run `klist purge`, then sign out and sign in again before you test.
