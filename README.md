@@ -37,7 +37,7 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 
 ### Demos
 
-[Overview](Instructions/Demos/overview.md) – all trainer demos, where they run and what they need
+[Overview](Instructions/Demos/README.md) – all trainer demos, where they run and what they need
 
 [Hybrid join and Microsoft Entra Kerberos](Instructions/Demos/hybrid-join-entra-kerberos.md) – setup checklist for the CL1/CL2 demo in the trainer pod
 
