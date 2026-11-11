@@ -1,4 +1,4 @@
-# Trainer notes – Azure Files share and Microsoft Entra Kerberos
+# Demo – Azure Files share and Microsoft Entra Kerberos
 
 Trainer demo: the lab files share `\\mddmi.file.core.windows.net\labfiles` on Azure Files shows SSO with Microsoft Entra Kerberos from CL3/CL4. Participants sign in with their synced `etcX` accounts and reach the share with a Kerberos ticket from Microsoft Entra ID, without line of sight to DC1. The labs themselves use `\\dc1\labfiles`.
 

@@ -35,11 +35,15 @@ App deployment and the Intune Management Extension, scripts and remediations, co
 
 [Log map, collecting logs](Instructions/Appendix.md)
 
-### Trainer notes
+### Demos
 
-[Hybrid join and Microsoft Entra Kerberos](Instructions/Trainer/hybrid-join-entra-kerberos.md) – setup checklist for the CL1/CL2 demo in the trainer pod
+[Overview](Instructions/Demos/overview.md) – all trainer demos, where they run and what they need
 
-[Azure Files share and Microsoft Entra Kerberos](Instructions/Trainer/azure-files-entra-kerberos.md) – setup checklist for the SSO demo with the Azure Files lab share
+[Hybrid join and Microsoft Entra Kerberos](Instructions/Demos/hybrid-join-entra-kerberos.md) – setup checklist for the CL1/CL2 demo in the trainer pod
+
+[Azure Files share and Microsoft Entra Kerberos](Instructions/Demos/azure-files-entra-kerberos.md) – setup checklist for the SSO demo with the Azure Files lab share
+
+[MDM wins over GP demo](Instructions/Demos/mdm-wins-over-gp-demo.md) – GPO-01 / Intune conflict on CL1 in the trainer pod
 
 ### Resources
 

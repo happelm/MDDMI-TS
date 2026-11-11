@@ -1,4 +1,4 @@
-# Trainer notes – Hybrid join and Microsoft Entra Kerberos (CL1/CL2 demo)
+# Demo – Hybrid join and Microsoft Entra Kerberos (CL1/CL2 demo)
 
 The trainer pod shows Microsoft Entra hybrid join and Windows Hello for Business cloud Kerberos trust on CL1 and CL2 in `smart.etc`. Participants' CL3/CL4 are Microsoft Entra joined only; this setup is a trainer demo.
 
@@ -19,7 +19,7 @@ Check the build with `winver` on DC1, CL1 and CL2.
 
 ## 2. Service connection point (SCP) on SRV1
 
-Run [`ConfigureSCP.ps1`](https://github.com/happelm/MDDMI-TS/tree/main/Labfiles/Trainer) on SRV1, signed in as Enterprise Admin. The script writes to AD over LDAP, so any domain member works. Use the tenant's `*.onmicrosoft.com` domain (no federation) and the tenant ID from Entra admin center → Overview.
+Run [`ConfigureSCP.ps1`](https://github.com/happelm/MDDMI-TS/tree/main/Labfiles/Demos) on SRV1, signed in as Enterprise Admin. The script writes to AD over LDAP, so any domain member works. Use the tenant's `*.onmicrosoft.com` domain (no federation) and the tenant ID from Entra admin center → Overview.
 
 ```powershell
 .\ConfigureSCP.ps1 -Domain <tenant>.onmicrosoft.com -TenantId <tenant ID>

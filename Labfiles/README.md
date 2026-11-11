@@ -8,6 +8,6 @@
 | `Detect-ReinstallCMTrace.ps1`, `Remediate-ReinstallCMTrace.ps1` | 6.2 | Remediation `etcX-Reinstall-CMTrace`, run on demand: removes the detection file of `etcX-CMTrace` and lets the IME reinstall it |
 | `createtestfolder.ps1` | 6.1 | Platform script `etcX-Folder`: creates `C:\TestFolder` |
 | `Detect-LabKey.ps1`, `Remediate-LabKey.ps1` | 6.1 | Remediation `etcX-Reg`: replace `etcX` with your prefix before you upload |
-| `Trainer\ConfigureSCP.ps1` | Trainer | Service connection point for Microsoft Entra hybrid join (trainer notes: Hybrid join and Microsoft Entra Kerberos) |
+| `Demos\ConfigureSCP.ps1` | Demos | Service connection point for Microsoft Entra hybrid join (demo: Hybrid join and Microsoft Entra Kerberos) |
 
 CMTrace for Lab 2.1 is on the classroom share `\\dc1\labfiles`. SyncML Viewer for Lab 4.1 is installed with `winget install syncmlviewer`.
