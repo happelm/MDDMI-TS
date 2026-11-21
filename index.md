@@ -15,7 +15,7 @@ Troubleshooting method and service-side tools, log files, registration and enrol
 
 | Lab | Title | Time |
 |---|---|---|
-| 0.1 | [Set up your lab](Instructions/Labs/LAB_00_1_set-up-your-lab.html) | 20 min |
+| 0.1 | [Set up your lab](Instructions/Labs/LAB_00_1_set-up-your-lab.html) | 25 min |
 | 2.1 | [Collect and read Intune logs](Instructions/Labs/LAB_02_1_collect-and-read-intune-logs.html) | 30 min |
 | 3.1 | [Check the enrollment state](Instructions/Labs/LAB_03_1_check-the-enrollment-state.html) | 25 min |
 | 4.1 | [Trace a policy to the registry](Instructions/Labs/LAB_04_1_trace-a-policy-to-the-registry.html) | 30 min |
